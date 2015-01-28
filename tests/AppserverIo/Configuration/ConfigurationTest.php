@@ -11,10 +11,8 @@
  *
  * PHP version 5
  *
- * @category  Library
- * @package   Configuration
  * @author    Tim Wagner <tw@techdivision.com>
- * @copyright 2014 TechDivision GmbH <info@techdivision.com>
+ * @copyright 2015 TechDivision GmbH <info@techdivision.com>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      http://github.com/appserver-io/configuration
  * @link      http://www.appserver.io
@@ -23,12 +21,10 @@
 namespace AppserverIo\Configuration;
 
 /**
- * Test immplementation for the XML based configuration implementation.
+ * Test implementation for the XML based configuration implementation.
  *
- * @category  Library
- * @package   Configuration
  * @author    Tim Wagner <tw@techdivision.com>
- * @copyright 2014 TechDivision GmbH <info@techdivision.com>
+ * @copyright 2015 TechDivision GmbH <info@techdivision.com>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      http://github.com/appserver-io/configuration
  * @link      http://www.appserver.io
@@ -39,7 +35,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     /**
      * The configuration instance to test.
      *
-     * @var TechDivision\ApplicationServer\Configuration
+     * @var \AppserverIo\Configuration\Interfaces\ConfigurationInterface
      */
     protected $configuration;
 
@@ -76,9 +72,12 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     {
         $child = new Configuration('foo');
         $this->configuration->addChild($child);
-        $this->assertSame(array(
-            $child
-        ), $this->configuration->getChildren());
+        $this->assertSame(
+            array(
+                $child
+            ),
+            $this->configuration->getChildren()
+        );
     }
 
     /**
@@ -94,7 +93,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test's the remove childs method when removing one child.
+     * Tests the remove children method when removing one child.
      *
      * @return void
      */
@@ -107,7 +106,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test's the remove childs method with an invalid path.
+     * Test's the remove children method with an invalid path.
      *
      * @return void
      */
@@ -120,7 +119,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test's the remove childs method with an invalid path.
+     * Test's the remove children method with an invalid path.
      *
      * @return void
      */
@@ -144,9 +143,12 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $toBeTested = new Configuration('testNode');
         $toBeTested->setAttr('test');
         $toBeTested->setValue('testValue');
-        $this->assertEquals(array(
-            $toBeTested
-        ), $this->configuration->getChildren());
+        $this->assertEquals(
+            array(
+                $toBeTested
+            ),
+            $this->configuration->getChildren()
+        );
     }
 
     /**
@@ -198,12 +200,14 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      *
      * @return SimpleXMLElement The test configuration element
      */
-    protected function getTestNode($attr = NULL, $value = NULL)
+    protected function getTestNode($attr = null, $value = null)
     {
-        return new \SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?>
-			 <test>
-			   <testNode attr="' . $attr . '">' . $value . '</testNode>
-			 </test>');
+        return new \SimpleXMLElement(
+            '<?xml version="1.0" encoding="UTF-8"?>
+            <test>
+            <testNode attr="' . $attr . '">' . $value . '</testNode>
+            </test>'
+        );
     }
 
     /**
@@ -330,8 +334,11 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function testCallMagicFunctionWithValidAttributeName()
     {
         $this->configuration->init($this->getTestNode($testAttrValue = 'test', 'testValue'));
-        $this->assertEquals($testAttrValue, $this->configuration->getTestNode()
-            ->getAttr());
+        $this->assertEquals(
+            $testAttrValue,
+            $this->configuration->getTestNode()
+                ->getAttr()
+        );
     }
 
     /**

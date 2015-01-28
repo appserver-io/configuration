@@ -11,13 +11,11 @@
  *
  * PHP version 5
  *
- * @category  Library
- * @package   Configuration
- * @author    Tim Wagner <tw@techdivision.com>
- * @copyright 2014 TechDivision GmbH <info@techdivision.com>
- * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link      http://github.com/appserver-io/configuration
- * @link      http://www.appserver.io
+ * @author     Tim Wagner <tw@techdivision.com>
+ * @copyright  2015 TechDivision GmbH <info@techdivision.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link       http://github.com/appserver-io/configuration
+ * @link       http://www.appserver.io
  */
 
 namespace AppserverIo\Configuration;
@@ -27,13 +25,11 @@ use AppserverIo\Configuration\Interfaces\ConfigurationInterface;
 /**
  * A simple XML based configuration implementation.
  *
- * @category  Library
- * @package   Configuration
- * @author    Tim Wagner <tw@techdivision.com>
- * @copyright 2014 TechDivision GmbH <info@techdivision.com>
- * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * @link      http://github.com/appserver-io/configuration
- * @link      http://www.appserver.io
+ * @author     Tim Wagner <tw@techdivision.com>
+ * @copyright  2015 TechDivision GmbH <info@techdivision.com>
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link       http://github.com/appserver-io/configuration
+ * @link       http://www.appserver.io
  */
 class Configuration implements ConfigurationInterface
 {
@@ -241,9 +237,8 @@ class Configuration implements ConfigurationInterface
             $this->setData($key, (string) $value);
         }
 
-        // append childs
+        // append children
         foreach ($node->children() as $child) {
-
             // create a new configuration node
             $cnt = new Configuration();
 
@@ -309,7 +304,7 @@ class Configuration implements ConfigurationInterface
      *
      * @param string $path The path of the configuration to remove the children for
      *
-     * @return \AppserverIo\Configuration\Interfaces\ConfigurationInterface The instance the childs has been removed
+     * @return \AppserverIo\Configuration\Interfaces\ConfigurationInterface The instance the children has been removed
      * @see \AppserverIo\Configuration\Interfaces\ConfigurationInterface::getChild($path)
      * @see \AppserverIo\Configuration\Interfaces\ConfigurationInterface::getChilds($path)
      */
@@ -667,7 +662,7 @@ class Configuration implements ConfigurationInterface
     /**
      * Validates the configuration node against the schema file.
      *
-     * @throws \Exception Is thrown if the validation was not succsessful
+     * @throws \Exception Is thrown if the validation was not successful
      * @return \DOMDocument The validated DOM document
      * @see \AppserverIo\Configuration\Configuration::setSchemaFile()
      */

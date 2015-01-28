@@ -1,6 +1,6 @@
 # Library to handle XML files in a tree structure
 
-[![Latest Stable Version](https://poser.pugx.org/appserver-io/configuration/v/stable.png)](https://packagist.org/packages/appserver-io/configuration) [![Total Downloads](https://poser.pugx.org/appserver-io/configuration/downloads.png)](https://packagist.org/packages/appserver-io/configuration) [![Latest Unstable Version](https://poser.pugx.org/appserver-io/configuration/v/unstable.png)](https://packagist.org/packages/appserver-io/configuration) [![License](https://poser.pugx.org/appserver-io/configuration/license.png)](https://packagist.org/packages/appserver-io/configuration) [![Build Status](https://travis-ci.org/appserver-io/configuration.png)](https://travis-ci.org/appserver-io/configuration)[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/appserver-io/configuration/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master)[![Code Coverage](https://scrutinizer-ci.com/g/appserver-io/configuration/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/appserver-io/configuration/v/stable.png)](https://packagist.org/packages/appserver-io/configuration) [![Total Downloads](https://poser.pugx.org/appserver-io/configuration/downloads.png)](https://packagist.org/packages/appserver-io/configuration) [![License](https://poser.pugx.org/appserver-io/configuration/license.png)](https://packagist.org/packages/appserver-io/configuration) [![Build Status](https://travis-ci.org/appserver-io/configuration.png)](https://travis-ci.org/appserver-io/configuration) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/appserver-io/configuration/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/appserver-io/configuration/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master)
 
 ## Introduction
 
@@ -47,5 +47,3 @@ $configuration->addChildWithNameAndValue('baseDirectory', '/application/base/dir
 # External Links
 
 * Documentation at [appserver.io](http://docs.appserver.io)
-* Documentation on [GitHub](https://github.com/techdivision/TechDivision_AppserverDocumentation)
-* [Getting started](https://github.com/techdivision/TechDivision_AppserverDocumentation/tree/master/docs/getting-started)
