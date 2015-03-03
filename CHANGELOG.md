@@ -1,3 +1,13 @@
+# Version 2.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Extended the ConfigurationInterface and added interfaces for configuration features
+
 # Version 1.0.0
 
 ## Bugfixes

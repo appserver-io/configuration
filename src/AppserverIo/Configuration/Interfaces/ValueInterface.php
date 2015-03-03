@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Configuration\Interfaces\ValueInterface
+ * \AppserverIo\Configuration\Interfaces\ValueInterface
  *
  * NOTICE OF LICENSE
  *
@@ -31,6 +31,13 @@ namespace AppserverIo\Configuration\Interfaces;
  */
 interface ValueInterface
 {
+
+    /**
+     * Implements toString method
+     *
+     * @return string
+     */
+    public function __toString();
 
     /**
      * Returns the node value.
