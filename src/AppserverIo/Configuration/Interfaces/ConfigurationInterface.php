@@ -122,6 +122,16 @@ interface ConfigurationInterface
     public function getNodeName();
 
     /**
+     * Recursively initializes the configuration instance with the data from the
+     * passed SimpleXMLElement.
+     *
+     * @param \SimpleXMLElement $node The node to load the data from
+     *
+     * @return \AppserverIo\Configuration\Interfaces\ConfigurationInterface The node instance itself
+     */
+    public function init(\SimpleXMLElement $node);
+
+    /**
      * Initializes the configuration with the XML information found
      * in the file with the passed relative or absolute path.
      *

@@ -295,7 +295,9 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      * Tests if the magic function __call throws an exception if invoked
      * nor with a getter or setter.
      *
-     * @return void @expectedException \Exception
+     * @return void
+     *
+     * @expectedException \Exception
      */
     public function testCallMagicFunctionNoGetterOrSetter()
     {
@@ -357,7 +359,6 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->configuration->initFromFile(__DIR__ . '/../../_files/appserver.xml');
         $this->configuration->addChild($configurationOne);
         $this->assertCount(2, $this->configuration->getChilds('/appserver/datasources/datasource'));
-
     }
 
     /**

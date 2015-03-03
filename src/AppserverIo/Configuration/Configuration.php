@@ -276,13 +276,11 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
                     $matches = $result;
                 } elseif ($result instanceof Configuration) {
                     $matches[] = $result;
-                } else {
-                    // do nothing
                 }
             }
             return $matches;
         } else {
-            return;
+            return null;
         }
     }
 
@@ -527,7 +525,7 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
 
         // initialize a new configuration instance
         $configuration = new Configuration();
-        $configuration->loadFromFile($file);
+        $configuration->initFromFile($file);
 
         // merge the instance with this one
         $this->merge($configuration);
@@ -548,7 +546,7 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
 
         // initialize a new configuration instance
         $configuration = new Configuration();
-        $configuration->loadFromString($string);
+        $configuration->initFromString($string);
 
         // merge the instance with this one
         $this->merge($configuration);

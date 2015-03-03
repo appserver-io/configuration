@@ -2,7 +2,7 @@
 
 ## Bugfixes
 
-* None
+* Fixed broken method calls to loadFromString() and loadFromFile()
 
 ## Features
 
