@@ -1,7 +1,7 @@
 <?php
 
 /**
- * AppserverIo\Configuration\Configuration
+ * \AppserverIo\Configuration\Configuration
  *
  * NOTICE OF LICENSE
  *
@@ -21,6 +21,8 @@
 namespace AppserverIo\Configuration;
 
 use AppserverIo\Configuration\Interfaces\ConfigurationInterface;
+use AppserverIo\Configuration\Interfaces\PersistableConfigurationInterface;
+use AppserverIo\Configuration\Interfaces\ValidityAwareConfigurationInterface;
 
 /**
  * A simple XML based configuration implementation.
@@ -31,7 +33,7 @@ use AppserverIo\Configuration\Interfaces\ConfigurationInterface;
  * @link       http://github.com/appserver-io/configuration
  * @link       http://www.appserver.io
  */
-class Configuration implements ConfigurationInterface
+class Configuration implements ConfigurationInterface, ValidityAwareConfigurationInterface, PersistableConfigurationInterface
 {
 
     /**
@@ -81,7 +83,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Set's the configuration element's node name.
+     * Sets the configuration element's node name.
      *
      * @param string $nodeName The node name
      *
@@ -93,7 +95,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Return's the configuration element's node name.
+     * Returns the configuration element's node name.
      *
      * @return string The node name
      */
@@ -274,13 +276,11 @@ class Configuration implements ConfigurationInterface
                     $matches = $result;
                 } elseif ($result instanceof Configuration) {
                     $matches[] = $result;
-                } else {
-                    // do nothing
                 }
             }
             return $matches;
         } else {
-            return;
+            return null;
         }
     }
 
@@ -465,7 +465,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Return's the configuration node's value.
+     * Returns the configuration node's value.
      *
      * @return string The node's value
      */
@@ -491,7 +491,7 @@ class Configuration implements ConfigurationInterface
      *
      * @return \AppserverIo\Configuration\Interfaces\ConfigurationInterface The instance
      */
-    public function merge(Configuration $configuration)
+    public function merge(ConfigurationInterface $configuration)
     {
         if ($this->hasSameSignature($configuration)) {
             $this->setValue($configuration->getValue());
@@ -523,9 +523,9 @@ class Configuration implements ConfigurationInterface
     public function mergeFromFile($file)
     {
 
-        // initialize a new configutation instance
+        // initialize a new configuration instance
         $configuration = new Configuration();
-        $configuration->loadFromFile($file);
+        $configuration->initFromFile($file);
 
         // merge the instance with this one
         $this->merge($configuration);
@@ -544,9 +544,9 @@ class Configuration implements ConfigurationInterface
     public function mergeFromString($string)
     {
 
-        // initialize a new configutation instance
+        // initialize a new configuration instance
         $configuration = new Configuration();
-        $configuration->loadFromString($string);
+        $configuration->initFromString($string);
 
         // merge the instance with this one
         $this->merge($configuration);
@@ -556,7 +556,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Return's the node signature using a md5 hash based on
+     * Returns the node signature using a md5 hash based on
      * the node name and the param data.
      *
      * @return string The node signature as md5 hash
@@ -579,7 +579,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Save's the configuration node recursively to the
+     * Saves the configuration node recursively to the
      * file with the passed name.
      *
      * @param string $filename The filename to save the configuration node to
@@ -607,7 +607,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Set's the filename of the schema file used for validation.
+     * Sets the filename of the schema file used for validation.
      *
      * @param string $schemaFile Filename of the schema for validation of the configuration node
      *
@@ -619,7 +619,7 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
-     * Return's the filename of the schema file used for validation.
+     * Returns the filename of the schema file used for validation.
      *
      * @return string The filename of the schema file used for validation
      */

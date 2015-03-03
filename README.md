@@ -1,6 +1,11 @@
 # Library to handle XML files in a tree structure
 
-[![Latest Stable Version](https://poser.pugx.org/appserver-io/configuration/v/stable.png)](https://packagist.org/packages/appserver-io/configuration) [![Total Downloads](https://poser.pugx.org/appserver-io/configuration/downloads.png)](https://packagist.org/packages/appserver-io/configuration) [![License](https://poser.pugx.org/appserver-io/configuration/license.png)](https://packagist.org/packages/appserver-io/configuration) [![Build Status](https://travis-ci.org/appserver-io/configuration.png)](https://travis-ci.org/appserver-io/configuration) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/appserver-io/configuration/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/appserver-io/configuration/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/appserver-io/configuration.svg?style=flat-square)](https://packagist.org/packages/appserver-io/configuration) 
+ [![Total Downloads](https://img.shields.io/packagist/dt/appserver-io/configuration.svg?style=flat-square)](https://packagist.org/packages/appserver-io/configuration)
+ [![License](https://img.shields.io/packagist/l/appserver-io/configuration.svg?style=flat-square)](https://packagist.org/packages/appserver-io/configuration)
+ [![Build Status](https://img.shields.io/travis/appserver-io/configuration/master.svg?style=flat-square)](http://travis-ci.org/appserver-io/configuration)
+ [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/appserver-io/configuration/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master)
+ [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/appserver-io/configuration/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/appserver-io/configuration/?branch=master)
 
 ## Introduction
 
@@ -25,7 +30,7 @@ to your ```composer.json``` and invoke ```composer update``` in your project.
 
 ## Usage
 
-As described in the introdcution the configuration is originally designed to work in a
+As described in the introduction the configuration is originally designed to work in a
 runtime environment like appserver.io provides it. The big advantage is, that it does
 not contain any not synchronizable instances which allows you to share it between
 threads.

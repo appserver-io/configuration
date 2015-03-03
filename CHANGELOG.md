@@ -1,3 +1,13 @@
+# Version 2.0.0
+
+## Bugfixes
+
+* Fixed broken method calls to loadFromString() and loadFromFile()
+
+## Features
+
+* Extended several interfaces and added interfaces for configuration features
+
 # Version 1.0.0
 
 ## Bugfixes
