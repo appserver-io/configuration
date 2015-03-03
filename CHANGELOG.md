@@ -6,7 +6,7 @@
 
 ## Features
 
-* Extended the ConfigurationInterface and added interfaces for configuration features
+* Extended several interfaces and added interfaces for configuration features
 
 # Version 1.0.0
 
