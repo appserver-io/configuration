@@ -13,20 +13,11 @@ This package provides generic XML handling functionality, designed to work in an
 application server like appserver.io. The configuration contains the XML structure in
 a simple object structure that makes it synchronziable between threads.
 
-## Installation
+## Issues
 
-You don't have to install this package, as it'll be delivered with the latest appserver.io 
-release. If you want to install it with your application only, you do this by add
-
-```sh
-{
-    "require": {
-        "appserver-io/configuration": "dev-master"
-    },
-}
-```
-
-to your ```composer.json``` and invoke ```composer update``` in your project.
+In order to bundle our efforts we would like to collect all issues regarding this package in [the main project repository's issue tracker](https://github.com/appserver-io/appserver/issues).
+Please reference the originating repository as the first element of the issue title e.g.:
+`[appserver-io/<ORIGINATING_REPO>] A issue I am having`
 
 ## Usage
 
@@ -49,6 +40,6 @@ $configuration->addChildWithNameAndValue('baseDirectory', '/application/base/dir
 
 ```
 
-# External Links
+## External Links
 
 * Documentation at [appserver.io](http://docs.appserver.io)
