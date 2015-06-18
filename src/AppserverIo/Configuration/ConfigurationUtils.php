@@ -51,7 +51,7 @@ class ConfigurationUtils
      *
      * @return \AppserverIo\Configuration\ConfigurationUtils The singleton instance
      */
-    public function singleton()
+    public static function singleton()
     {
 
         // query whether we've already loaded an instance or not
