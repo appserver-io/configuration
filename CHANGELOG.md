@@ -1,3 +1,13 @@
+# Version 2.0.1
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add ConfigurationUtils class providing schema based XML validation
+
 # Version 2.0.0
 
 ## Bugfixes
