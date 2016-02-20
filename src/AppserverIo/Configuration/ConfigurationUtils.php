@@ -111,7 +111,7 @@ class ConfigurationUtils
                 // validate the DOM document instance
                 $domDocument = new \DOMDocument();
                 $domDocument->load($fileName);
-                $result = ConfigurationUtils::singleton()->validateXml($domDocument, $schemaFile, $failOnErrors);
+                ConfigurationUtils::singleton()->validateXml($domDocument, $schemaFile, $failOnErrors);
                 break;
 
             // in all other cases we throw an excption

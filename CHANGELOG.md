@@ -1,3 +1,13 @@
+# Version 2.0.2
+
+## Bugfixes
+
+* Fixed PSR-2 issue
+
+## Features
+
+* Update Travis-CI configuration file
+
 # Version 2.0.1
 
 ## Bugfixes
