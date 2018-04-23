@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<di xmlns="http://www.appserver.io/appserver">
+    <beans>
+        <bean>
+            <name>Registry</name>
+            <shared>true</shared>
+            <class>TechDivision\Project\Doctrine\Bridge\Registry</class>
+            <bean-ref>
+                <bean-ref-name>container</bean-ref-name>
+                <bean-link>ProviderInterface</bean-link>
+            </bean-ref>
+            <persistence-unit-ref>
+                <persistence-unit-ref-name>entityManager</persistence-unit-ref-name>
+                <persistence-unit-name>ProjectEntityManager</persistence-unit-name>
+            </persistence-unit-ref>
+        </bean>
+    </beans>
+</di>

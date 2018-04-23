@@ -51,6 +51,13 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
     protected $nodeName;
 
     /**
+     * The node's position in the tree.
+     *
+     * @var integer
+     */
+    protected $position = 0;
+
+    /**
      * The node value.
      *
      * @var string
@@ -75,11 +82,13 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
      * Initializes the configuration with the node name of the
      * node in the XML structure.
      *
-     * @param string $nodeName The configuration element's node name
+     * @param string|null $nodeName The configuration element's node name
+     * @param integer     $position The node's position in the tree
      */
-    public function __construct($nodeName = null)
+    public function __construct($nodeName = null, $position = 0)
     {
         $this->setNodeName($nodeName);
+        $this->setPosition($position);
     }
 
     /**
@@ -102,6 +111,28 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
     public function getNodeName()
     {
         return $this->nodeName;
+    }
+
+    /**
+     * Sets the position of the node in the tree.
+     *
+     * @param integer $position The node's position
+     *
+     * @return void
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    }
+
+    /**
+     * Returns the position of the node in the tree.
+     *
+     * @return integer The node's position
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 
     /**
@@ -239,10 +270,13 @@ class Configuration implements ConfigurationInterface, ValidityAwareConfiguratio
             $this->setData($key, (string) $value);
         }
 
+        // initialize the position counter
+        $position = 0;
+
         // append children
         foreach ($node->children() as $child) {
             // create a new configuration node
-            $cnt = new Configuration();
+            $cnt = new Configuration(null, $position++);
 
             // parse the configuration recursive
             $cnt->init($child);
