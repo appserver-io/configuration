@@ -198,7 +198,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      * Creates a SimpleXMLElement representing a test
      * configuration element.
      *
-     * @return SimpleXMLElement The test configuration element
+     * @return \SimpleXMLElement The test configuration element
      */
     protected function getTestNode($attr = null, $value = null)
     {
@@ -374,5 +374,19 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->configuration->initFromFile(__DIR__ . '/_files/META-INF/appserver-ds.xml');
         $this->configuration->merge($configuration);
         $this->assertCount(2, $this->configuration->getChilds('/datasources/datasource'));
+    }
+
+    public function testGetPosition()
+    {
+
+        $configuration = new Configuration();
+        $configuration->initFromFile(__DIR__ . '/_files/META-INF/di.xml');
+
+        $bean = $configuration->getChild('/di/beans/bean');
+
+        $beanRef = $bean->getChild('/bean/bean-ref');
+        $this->assertSame(3, $beanRef->getPosition());
+        $persistenceUnitRef = $bean->getChild('/bean/persistence-unit-ref');
+        $this->assertSame(4, $persistenceUnitRef->getPosition());
     }
 }

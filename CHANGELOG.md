@@ -1,12 +1,12 @@
-# Version 2.0.2
+# Version 3.0.0
 
 ## Bugfixes
 
-* Fixed PSR-2 issue
+* None
 
 ## Features
 
-* Update Travis-CI configuration file
+* Store information of a childs position in the XML tree
 
 # Version 2.0.1
 
